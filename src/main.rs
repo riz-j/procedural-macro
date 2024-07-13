@@ -23,8 +23,13 @@ struct Bar {
     b: i32,
 }
 
+#[derive(Reflective)]
+struct RpcFunction;
+
 fn main() {
     let bar = Bar { a: 50, b: 25 };
+    let rpc_function = RpcFunction {};
 
-    println!("Hello, world: {}", bar.name());
+    println!("Struct name: {}", bar.name());
+    println!("Struct name: {}", rpc_function.name());
 }
